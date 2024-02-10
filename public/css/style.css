@@ -1,0 +1,73 @@
+body {
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #fff;
+  color: #373a3c;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #373a3c;
+}
+
+/* ブログのナビゲーション */
+
+.navbar {
+  padding: 8px 16px;
+}
+
+.container {
+  max-width: 1140px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  color: #5CB85C;
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-right li:not(:first-child) {
+  margin-left: 20px;
+}
+
+/* TOPページのバナーパート */
+
+.home-banner {
+  background-color: #5CB85C;
+  color: #fff;
+  padding: 2rem 0;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  width: 100%;
+}
+
+.home-banner h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 0;
+  padding: 0 0 0.5rem;
+}
+
+.home-banner p {
+  font-size: 1.5rem;
+  margin: 0;
+}
