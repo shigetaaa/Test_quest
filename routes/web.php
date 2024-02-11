@@ -28,4 +28,25 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+// 記事編集画面のルーティングを追加する
+
+use App\Http\Controllers\EditController;
+
+Route::get('/{blog}/edit', [EditController::class, 'edit'])->name('blogs.edit');
+Route::put('/{blog}/update', [EditController::class, 'update'])->name('blogs.update');
+
+
+// ブログ記事を表示するためのルーティングを追加する
+
+use App\Http\Controllers\ShowController;
+
+Route::get('/{blog}', [ShowController::class, 'show'])->name('blogs.show');
+
+
+// TOPページにブログ記事を表示するためのルーティングを追加する
+
+use App\Http\Controllers\BlogController;
+
+Route::get('/', [BlogController::class, 'index'])->name('blogs.index');
