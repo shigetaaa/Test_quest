@@ -42,4 +42,17 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // リレーショナルデータベースの設定
+
+    public function blogs()
+    {
+        return $this->hasMany('App\Models\Blog', 'user_id');
+    }
+
+
+    public function tags()
+    {
+        return $this->hasMany('App\Models\tags', 'user_id');
+    }
 }

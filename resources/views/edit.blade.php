@@ -33,6 +33,11 @@
     </div>
 
     <div>
+        <label for="tags">Tags:</label>
+        <textarea id="tags" name="tags">{{ implode(',', $blog->tags->pluck('name')->toArray()) }}</textarea>
+    </div>
+
+    <div>
         <button type="submit">Update Blog</button>
     </div>
 </form>

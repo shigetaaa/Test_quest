@@ -13,8 +13,7 @@ class BlogController extends Controller
    */
   public function index()
   {
-    $blogs = Blog::all();
-
+    $blogs = Blog::with('tags')->paginate(10); // 10件ずつページネーションする
     return view('welcome', compact('blogs'));
   }
 }

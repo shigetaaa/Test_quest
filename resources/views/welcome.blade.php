@@ -3,6 +3,7 @@
   <head>
       <meta charset="utf-8">
       <link rel="stylesheet" href="{{ asset('css/normalize.css') }}">
+      <link href="{{ asset('css/app.css') }}" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
       <title>conduit</title>
 
@@ -18,11 +19,10 @@
     {{-- ここからメイン表示 --}}
     <div class="main_container">
       <div class="grid-container">
-        <div>
-            {{-- フィード表示切替 --}}
+        <div>            {{-- フィード表示切替 --}}
             <ul>
-              <li>
-                <a href="#">Global Feed</a>
+              <li >
+                <a class=home_nav_link href="#">Global Feed</a>
               </li>
             </ul>
             {{-- ブログ一覧表示 --}}
@@ -32,12 +32,24 @@
                 <div class="blog_list_container">
                     <li>
                         <h2>{{ $blog->title }}</h2>
-                        <p>{{ $blog->subject }}</p>
+                        <p class="subject_style">{{ $blog->subject }}</p>
+                        <div class="blog_elements">
+                            <span class="read_more">read more...</span>
+                            <div>
+                            @foreach($blog->tags as $tag)
+                            <span class="blog_tags">{{ $tag->name }}</span>
+                            @endforeach
+                            </div>
+                        </div>
                     </li>
-                    <span class="read_more">read more...</span>
+
+
                 </div>
                 </a>
                 @endforeach
+                <div> {{-- ページネーション表示 --}}
+                    {{ $blogs->links() }}
+                </div>
             </ul>
         </div>
 

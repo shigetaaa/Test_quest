@@ -21,17 +21,43 @@ a {
 .main_container {
   max-width: 1140px;
   margin: 0 auto;
-  padding-top: 30px;
+  padding: 30px;
+
 }
 
 .small_container {
   max-width: 900px;
   margin: 0 auto;
+  padding: 30px;
 }
 
+/* 共通パーツ */
 
+.green_button {
+  /* 緑ボタン */
+  background-color: #5CB85C;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-/* ナビゲーション */
+.green_border_button {
+  /* 緑ボタン */
+  background-color: #fff;
+  border: solid 2px #5CB85C;
+  color: #5CB85C;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ここから個別パート---------------------------------------------- */
+
+/*
+ナビゲーション
+*/
 
 .navbar {
   padding: 8px 16px;
@@ -96,8 +122,16 @@ TOPページ
 
 .grid-container {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3.5fr 1fr;
   gap: 20px;
+}
+
+/* TOPページのブログ表示ナビ */
+
+.home_nav_link {
+  padding: 20px;
+  border-bottom: solid 2px #5CB85C;
+  margin-bottom: 5px;
 }
 
 
@@ -133,6 +167,28 @@ TOPページ
   margin-right: 3px;
   margin-bottom: 0.2rem;
   display: inline-block;
+}
+
+.subject_style {
+  font-size: 1rem;
+  color: #999;
+  margin-bottom: 15px;
+  line-height: 1.3rem;
+}
+
+.blog_elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  font-size: 0.8rem;
+  line-height: 2;
+}
+
+.blog_tags {
+  border: solid 1px #999;
+  padding: 3px 10px;
+  border-radius: 50px;
 }
 
 
@@ -190,3 +246,53 @@ button:hover {
   margin: 0;
   /* padding: 0 0 0.5rem; */
 }
+
+.button_container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.button_container button {
+  margin-left: 20px;
+}
+
+
+/* ページネーション */
+
+.pagination {
+  display: flex;
+  padding: 0;
+  margin-top: 30px;
+
+}
+
+.pagination li {
+  padding: 10px 15px;
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+  border-left: solid 1px #ddd;
+  color: #5CB85C;
+}
+
+.pagination li:last-child {
+  border-right: solid 1px #ddd;
+}
+
+.page-item .active {
+  background-color: #4CAF50;
+  /* あなたの好きな色に変更 */
+  color: white;
+  /* テキストの色を変更 */
+}
+
+.pagination .active a {
+  background-color: #4CAF50;
+  /* あなたの好きな色に変更 */
+  color: white;
+  /* テキストの色を変更 */
+}
+
+/* .pagination li a {
+  color: #5CB85C;
+} */

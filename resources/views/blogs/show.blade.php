@@ -17,7 +17,20 @@
 
     <div class="main_container">
         <p>{{ $blog->content }}</p>
+        @foreach($blog->tags as $tag)
+        <span class="blog_tags">{{ $tag->name }}</span>
+        @endforeach
+        <div class="button_container">
+          <a class="green_button" href="{{ route('blogs.edit', $blog->id) }}">Edit Blog</a>
+          <form method="POST" action="{{ route('blogs.destroy', $blog->id) }}">
+              @csrf
+              @method('DELETE')
+              <button class="green_border_button" type="submit">Delete Blog</button>
+          </form>
+        </div>
+
     </div>
+
 
 </body>
 </html>

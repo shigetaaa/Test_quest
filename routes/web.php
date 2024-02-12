@@ -37,9 +37,18 @@ use App\Http\Controllers\EditController;
 Route::get('/{blog}/edit', [EditController::class, 'edit'])->name('blogs.edit');
 Route::put('/{blog}/update', [EditController::class, 'update'])->name('blogs.update');
 
+// 削除機能のルーティングを追加する
+Route::delete('/{blog}', [EditController::class, 'destroy'])->name('blogs.destroy');
 
-// ブログ記事を表示するためのルーティングを追加する
+// 新規記事の作成画面のルーティングを追加する
+Route::get('post/create', [EditController::class, 'create'])->name('blogs.create');
 
+// 新規記事を保存するためのルーティングを追加する
+Route::post('post', [EditController::class, 'store'])->name('blogs.store');
+
+
+
+// 個別ブログ記事を表示するためのルーティングを追加する
 use App\Http\Controllers\ShowController;
 
 Route::get('/{blog}', [ShowController::class, 'show'])->name('blogs.show');
