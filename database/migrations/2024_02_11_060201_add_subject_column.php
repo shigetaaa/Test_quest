@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('blogs', function (Blueprint $table) {
             //追加
-            $table->string('subject');
+            $table->string('subject')->default(' ');
         });
     }
 

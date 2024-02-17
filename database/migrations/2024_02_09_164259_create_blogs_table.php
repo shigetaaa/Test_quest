@@ -17,8 +17,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->text('content');
-            $table->unsignedBigInteger('article_tag_id');
-            $table->foreign('article_tag_id')->references('id')->on('articles_tags');
+            // 以下の行を削除
+            // $table->unsignedBigInteger('article_tag_id');
+            // $table->foreign('article_tag_id')->references('id')->on('articles_tags');
             $table->timestamps();
         });
     }
